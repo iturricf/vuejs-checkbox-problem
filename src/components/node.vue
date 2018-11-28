@@ -47,29 +47,16 @@ export default {
     methods: {
         check (node) {
             if (-1 < this.children.indexOf(node) && this.checkedChildren.indexOf(node) == -1) {
-                console.log('pushed');
                 this.checkedChildren.push(node);
             }
-            console.log(this.children);
-            console.log("Check", node);
-
-            var r = this.children.indexOf(node);
-            console.log("Found:", r);
-            console.log(this.value.name, this.checkedChildren.length);
 
             this.checked = true;
             this.$emit('check', this.value);
         },
         uncheck (node) {
             if (-1 < this.checkedChildren.indexOf(node)) {
-                console.log('popped');
                 this.checkedChildren.pop();
             }
-
-            console.log("Uncheck", node);
-            console.log(this.children);
-            console.log(this.value.name, this.checkedChildren.length);
-
 
             if (this.allChildrenUnchecked) {
                 this.checked = false;

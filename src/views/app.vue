@@ -36,7 +36,7 @@ export default {
             try {
                 this.nodes = JSON.parse(code);
                 this.error = null;
-                console.log("Parsed Json:", this.code);
+                console.log("Parsed Json:", this.nodes);
             } catch (e) {
                 console.log("An error has ocurred while parsing your code");
                 this.error = "An error has ocurred while parsing your code";
